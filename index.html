@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicación de Gestión de Tareas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Aplicación de Gestión de Tareas</h1>
+    <button id="add-task-btn">Agregar Tarea</button>
+  </header>
+  <main>
+    <div class="filter-options">
+      <label for="filter-priority">Filtrar por Prioridad:</label>
+      <select id="filter-priority">
+        <option value="All">Todas</option>
+        <option value="Low">Baja</option>
+        <option value="Medium">Media</option>
+        <option value="High">Alta</option>
+      </select>
+      <label for="filter-label">Filtrar por Etiqueta:</label>
+      <input type="text" id="filter-label" placeholder="Ingrese etiqueta">
+      <button id="apply-filter-btn">Aplicar Filtro</button>
+    </div>
+    <ul id="task-list"></ul>
+  </main>
+  <div id="task-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <form id="task-form">
+        <input type="hidden" id="task-id">
+        <label for="task-title">Título:</label>
+        <input type="text" id="task-title" required>
+        <label for="task-desc">Descripción:</label>
+        <textarea id="task-desc"></textarea>
+        <label for="task-due">Fecha de Vencimiento:</label>
+        <input type="date" id="task-due">
+        <label for="task-priority">Prioridad:</label>
+        <select id="task-priority">
+          <option value="Low">Baja</option>
+          <option value="Medium">Media</option>
+          <option value="High">Alta</option>
+        </select>
+        <label for="task-labels">Etiquetas (separadas por comas):</label>
+        <input type="text" id="task-labels">
+        <button type="submit">Guardar Tarea</button>
+      </form>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
